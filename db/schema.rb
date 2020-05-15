@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2020_05_15_104055) do
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,17 +58,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_104055) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.text "content"
-    t.integer "rating"
-    t.bigint "cocktail_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cocktail_id"], name: "index_reviews_on_cocktail_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "doses", "cocktails"
   add_foreign_key "doses", "ingredients"
-  add_foreign_key "reviews", "cocktails"
 end
