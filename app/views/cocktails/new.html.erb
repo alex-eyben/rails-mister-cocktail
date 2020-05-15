@@ -1,16 +1,16 @@
 
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-8">
       <h1>Create a new cocktail</h1>
-
+      <br>
       <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
         <%= f.input :photo, as: :file %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
+        <br>
+        <%= f.button :submit, class: 'btn btn-outline-secondary' %>
       <% end %>
       <br>
-      <%= link_to "Go back to list of cocktails", cocktails_path %>
     </div>
   </div>
 </div>
